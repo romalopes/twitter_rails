@@ -1,5 +1,9 @@
 <!DOCTYPE html>
 <html>
+  <%#link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/holiday.css@0.11.2" /%>
+  <%#link rel="stylesheet" href="https://unpkg.com/bamboo.css/dist/dark.min.css"%>
+  <%#link rel="stylesheet" href="https://unpkg.com/marx-css/css/marx.min.css"%>
+  <%#link rel="stylesheet" href="https://vanillacss.com/vanilla.css" type="text/css"%>
   <head>
     <title><%= content_for(:title) || "Twitter Rails" %></title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -7,8 +11,6 @@
     <meta name="mobile-web-app-capable" content="yes">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/holiday.css@0.11.2" />
-    <%#link rel="stylesheet" href="https://unpkg.com/marx-css/css/marx.min.css"%>
     <%= yield :head %>
     <%# Enable PWA manifest for installable apps (make sure to enable in config/routes.rb too!) %>
     <%#= tag.link rel: "manifest", href: pwa_manifest_path(format: :json) %>
@@ -21,6 +23,9 @@
   </head>
   <body>
     <main class="container mx-auto mt-28 px-5 flex">
+      <%= render partial: 'layouts/navbar' %>
+      <p class="notice"> <%=notice %></p>
+      <p class="alert"> <%=alert %></p>
       <%= yield %>
     </main>
   </body>

@@ -26,3 +26,8 @@ Things you may want to cover:
 % gem install bundler
 % rails new twitter_rails
 % rails g scaffold Post title:text user_id:integer
+% rails g controller pages home about contact
+% rails g authentication
+
+% rails action_text:install
+% gem install mini_magick
