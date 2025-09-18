@@ -1,12 +1,11 @@
 <div id="<%= dom_id post %>">
+  <%= post.user.user_name if post.user %>
   <p>
     <strong>Title:</strong>
     <%= post.title %>
   </p>
-
   <p>
     <strong>User:</strong>
     <%= post.user_id %>
   </p>
-
 </div>

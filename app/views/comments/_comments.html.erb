@@ -1,0 +1,6 @@
+<h2>Comments</h2>
+<div id="comments">
+  <%= "Total Comments: #{post.comments.count}" %><br>
+  <%= render post.comments %>
+</div>
+<%= render "comments/new", post: post %>

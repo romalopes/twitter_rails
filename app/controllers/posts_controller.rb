@@ -50,13 +50,20 @@ class PostsController < ApplicationController
 
   # DELETE /posts/1 or /posts/1.json
   def destroy
+    @post.comments.destroy_all
     @post.destroy!
+    # Post.transaction do
+    #   post = Post.find(params[:id])
+    #   post.destroy(validate: false)
+    # end
 
     respond_to do |format|
       format.html { redirect_to posts_path, notice: "Post was successfully destroyed.", status: :see_other }
       format.json { head :no_content }
     end
   end
+
+
 
   private
     # Use callbacks to share common setup or constraints between actions.
