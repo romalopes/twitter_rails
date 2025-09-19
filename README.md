@@ -31,3 +31,4 @@ Things you may want to cover:
 
 % rails action_text:install
 % gem install mini_magick
+$ rails g resource comment post:references user:references content:text
